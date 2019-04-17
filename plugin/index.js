@@ -180,7 +180,10 @@ class DashboardPlugin {
           value: {
             errors: stats.hasErrors(),
             warnings: stats.hasWarnings(),
-            data: stats.toJson()
+            // This can break when you're build it TOOO large.
+            // data: stats.toJson()
+            // Skip it for now. Yay!
+            data: {errors:[],warnings:[]}
           }
         },
         {
